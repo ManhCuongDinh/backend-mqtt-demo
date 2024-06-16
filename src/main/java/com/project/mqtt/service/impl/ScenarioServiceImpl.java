@@ -130,6 +130,7 @@ public class ScenarioServiceImpl implements ScenarioService {
     public void delete(Long id) {
         log.debug("Request to delete Scenario : {}", id);
         scenarioRepository.deleteById(id);
+        actionRepository.deleteAllByScenarioId(id);
     }
 
     @Override
